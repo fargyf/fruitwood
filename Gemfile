@@ -19,6 +19,7 @@ group :assets do
   gem 'bootstrap-datepicker-rails'
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'jquery-fileupload-rails'
+  gem 'therubyracer'
 end
 
 group :development, :test do
@@ -26,9 +27,14 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'pry'
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'jasmine', '1.3.0'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
 end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
