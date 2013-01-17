@@ -1,6 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# Pick the frameworks you want:
+#require 'rails/all'
+require "active_record/railtie"
+require "action_controller/railtie"
+require "active_resource/railtie"
+require "sprockets/railtie"
+#require "action_mailer/railtie"
+# require "rails/test_unit/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -16,7 +23,7 @@ module Fruitwood
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/app/concerns)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -58,5 +65,16 @@ module Fruitwood
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => true
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.helper_specs false
+      g.view_specs false
+    end
+
   end
 end
