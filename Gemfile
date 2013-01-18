@@ -27,11 +27,11 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'jasmine', '~> 1.3.1'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :test do
-  #gem 'jasmine', '1.3.0'
-  gem 'factory_girl_rails', '~> 4.0'
   gem 'capybara'
 end
 
