@@ -1,0 +1,11 @@
+.user-bar {
+  @extend .horizontal;
+  margin: 0;
+  li {
+    margin-right: 5px;
+    line-height: $navbarHeight;
+    > .btn {
+      margin-top: 0;
+    }
+  }
+}
