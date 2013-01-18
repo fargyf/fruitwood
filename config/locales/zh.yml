@@ -5,8 +5,11 @@ zh:
       datepicker: 'yyyy-mm-dd'
 
   layout:
+    guomu: "果木"
     title: "果木"
+    holder: " 星云软件"
     contact_us: "联系我们"
+    opensource: "开源社区"
 
   labels:
     sign_in: "登录"

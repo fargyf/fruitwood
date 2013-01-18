@@ -1,14 +1,48 @@
 !!! 5
 %html
   %head
-    %title=t('layout.title')
+    %title= t('layout.title')
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
 
-  %body
-    = yield
+  %body{:class => body_attributes}
+    %header#header
+      .navbar.navbar-static-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{:href => "/"}
+              %span.icon-19wu
+              %span= t('layout.guomu')
+            .nav-collapse.collapse
+              = render_user_bar
+    #main
+      .container
+        = render_flashes
+
+      = yield :before_content
+
+      #content
+        .container
+          = content_for?(:content) ? yield(:content) : yield
+
+    %footer#footer
+      .container
+        %p.pull-right &copy; #{Date.current.year.to_s + t('layout.holder')}
+        %ul.pull-left.horizontal
+          %li
+            %a{:href=>"http://github.com/saberma/19wu"}= t('layout.opensource')
+          %li.muted /
+          %li
+            %a{:href=>"mailto:starclouds.net@gmail.com"}= t('layout.contact_us')
+
+
+
 
 
     /
