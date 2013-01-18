@@ -1,0 +1,27 @@
+zh-CN:
+  date:
+    weekstart: '1'
+    formats:
+      datepicker: 'yyyy-mm-dd'
+
+  layout:
+    title: "果木"
+    contact_us: "联系我们"
+
+  labels:
+    sign_in: "登录"
+    sign_up: "注册"
+    cancel: "取消"
+
+  flash:
+    events:
+      created: "活动已经发布"
+    profiles:
+      updated: "个人资料已经更新"
+
+  views:
+    events:
+      new:
+        title: "发起活动"
+      edit:
+        title: "修改活动"
