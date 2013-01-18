@@ -19,7 +19,7 @@ group :assets do
   gem 'bootstrap-datepicker-rails'
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'jquery-fileupload-rails'
-  gem 'therubyracer'
+  gem 'therubyracer', '~> 0.11.2'
 end
 
 group :development, :test do
