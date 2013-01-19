@@ -17,7 +17,7 @@
               %span.icon-bar
               %span.icon-bar
             %a.brand{:href => "/"}
-              %span.icon-19wu
+              %span.icon-guomu
               %span= t('layout.guomu')
             .nav-collapse.collapse
               = render_user_bar
@@ -31,19 +31,19 @@
         .container
           = content_for?(:content) ? yield(:content) : yield
 
-    %footer#footer
+    %hr
+    %footer
       .container
-        %p.pull-right &copy; #{Date.current.year.to_s + t('layout.holder')}
         %ul.pull-left.horizontal
           %li
             %a{:href=>"http://github.com/saberma/19wu"}= t('layout.opensource')
           %li.muted /
           %li
             %a{:href=>"mailto:starclouds.net@gmail.com"}= t('layout.contact_us')
-
-
-
-
+        %ul.pull-right.horizontal
+          %li &copy; #{Date.current.year }
+          %li
+            %a{:href => "http://caok.github.com/", :target => "_blank"}= t('layout.holder')
 
     /
       Javascripts

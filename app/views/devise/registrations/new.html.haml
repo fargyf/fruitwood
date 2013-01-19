@@ -1,0 +1,27 @@
+- content_for :before_content do
+
+  .jumbotron
+    .container
+      .row-fluid
+        .span5
+          .slogan
+            %h1= t('slogan.title')
+            %p= t('slogan.description')
+        .span5.offset2
+          = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'form-full-width'}) do |f|
+            = f.input :name, :label => false, :placeholder => resource.class.human_attribute_name(:name)
+            = f.input :tel, :label => false, :placeholder => resource.class.human_attribute_name(:tel)
+            = f.input :password, :label => false, :placeholder => resource.class.human_attribute_name(:password)
+            = f.input :password_confirmation, :label => false, :placeholder => resource.class.human_attribute_name(:password_confirmation)
+            = f.submit t('labels.sign_up'), :class => 'btn btn-success'
+
+.row-fluid
+  .span3
+    %h3= t('highlights.about_us.title')
+    %p= t('highlights.about_us.description')
+  .span3.offset1
+    %h3= t('highlights.dishes.title')
+    %p= t('highlights.dishes.description')
+  .span3.offset1
+    %h3= t('highlights.events.title')
+    %p= t('highlights.events.description')
