@@ -5,21 +5,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :tel, :loginable, :roles_mask
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :tel, :roles_mask
 
   ##############
   # validation #
   ##############
-  validates :name, presence: true, uniqueness: { case_sensitive: false }, format: { with: /[a-zA-Z0-9_]+/ }
-  validates :tel, :presence => true
-  validates :tel, :uniqueness => true
+  validates :name, :presence => true
+  validates :tel, :presence => true, :uniqueness => true, :format => { :with => /(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9})/ }
 
   private
   def email_required?
     false
-  end
-
-  def password_required?
-    self.loginable? && new_record? || password.present?
   end
 end

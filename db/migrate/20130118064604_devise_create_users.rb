@@ -22,7 +22,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Others
       t.string :tel, :null => false, :default => ""
       t.string :name
-      t.boolean :loginable
       t.integer :roles_mask
 
       ## Confirmable

@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20130118064604) do
     t.string   "last_sign_in_ip"
     t.string   "tel",                 :default => "", :null => false
     t.string   "name"
-    t.boolean  "loginable"
     t.integer  "roles_mask"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
