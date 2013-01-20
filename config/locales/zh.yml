@@ -44,3 +44,6 @@ zh:
         title: "发起活动"
       edit:
         title: "修改活动"
+    users:
+      show:
+        title: "个人资料"

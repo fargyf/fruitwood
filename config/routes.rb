@@ -1,5 +1,5 @@
 Fruitwood::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   authenticated :user do
     root to: "home#index"
@@ -7,9 +7,12 @@ Fruitwood::Application.routes.draw do
 
   as :user do
     root to: 'devise/registrations#new'
+    get 'account' => 'registrations#edit', :as => 'account'
   end
 
   get "home/index"
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
