@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.find_or_create_by_name_and_tel('demo', '15445647889', :password => '666666').save!
+User.find_or_create_by_name_and_tel('guomu', '12345678', :password => '666666').save!
