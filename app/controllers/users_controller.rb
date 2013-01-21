@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource :only => [:show, :index]
+
   def show
     @user = User.find(params[:id])
   end
