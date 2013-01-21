@@ -1,0 +1,27 @@
+- model_class = User
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:tel)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:roles_mask)
+      %th= model_class.human_attribute_name(:last_sign_in_at)
+      %th= model_class.human_attribute_name(:created_at)
+  %tbody
+    -@users.each do |user|
+      %tr
+        %td= link_to user.id, user_path(user)
+        %td= user.name
+        %td= user.tel
+        %td= user.email
+        %td
+          -for role in user.roles
+            = I18n.t "role.#{role}"
+        %td= l user.last_sign_in_at.to_date
+        %td= l user.created_at.to_date
+
+= paginate @users
+
