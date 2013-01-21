@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # validation #
   ##############
   validates :name, :presence => true
-  validates :tel, :presence => true, :uniqueness => true, :format => { :with => /(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9})/ }
+  validates :tel, :presence => true, :uniqueness => true, :format => { :with => /(^\d{7,8}$)|(^\d{11}$)/ }
 
   private
   def email_required?
