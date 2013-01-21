@@ -12,7 +12,7 @@ Fruitwood::Application.routes.draw do
 
   get "home/index"
 
-  resources :users
+  resources :users, :only => [:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
