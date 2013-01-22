@@ -1,4 +1,7 @@
 Fruitwood::Application.routes.draw do
+  resources :events
+
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   authenticated :user do
