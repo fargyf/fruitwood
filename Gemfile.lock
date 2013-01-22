@@ -83,6 +83,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
+    has_html_pipeline (0.0.1)
     hike (1.2.1)
     html-pipeline-no-charlock (0.0.6)
       activesupport (>= 2)
@@ -236,6 +237,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.0)
   haml-rails
+  has_html_pipeline
   html-pipeline-no-charlock
   jasmine (~> 1.3.1)
   jquery-fileupload-rails

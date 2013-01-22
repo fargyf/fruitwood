@@ -5,6 +5,7 @@ gem 'mysql2'
 
 gem 'simple_form'
 gem 'html-pipeline-no-charlock'
+gem 'has_html_pipeline'
 gem 'haml-rails'
 gem 'ransack'
 gem 'kaminari'
