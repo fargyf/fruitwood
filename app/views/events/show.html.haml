@@ -9,9 +9,9 @@
 %p
   %b End:
   = @event.end_date
-%p
-  %b Content:
-  = @event.content
+
+.event-body
+  != @event.content_html
 
 = link_to 'Edit', edit_event_path(@event)
 \|
