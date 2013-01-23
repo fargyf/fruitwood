@@ -1,4 +1,7 @@
 Fruitwood::Application.routes.draw do
+  resources :events
+
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   authenticated :user do
@@ -12,7 +15,7 @@ Fruitwood::Application.routes.draw do
 
   get "home/index"
 
-  resources :users
+  resources :users, :only => [:show, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
